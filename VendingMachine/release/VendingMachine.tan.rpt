@@ -1,0 +1,1014 @@
+Classic Timing Analyzer report for VendingMachine
+Mon Sep 04 21:05:58 2023
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                           ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------+---------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                               ; To                                          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------+---------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; -4.233 ns                        ; coin2                                              ; ControlModule:controlModule|selectItem[3]   ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 23.348 ns                        ; ControlModule:controlModule|change[1]              ; change_7seg[0]                              ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 10.046 ns                        ; rst                                                ; ControlModule:controlModule|ITEM.11         ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 219.83 MHz ( period = 4.549 ns ) ; clk_1hz:clk_1hz_generator|divide_by_10:d1|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d1|Q ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                    ;                                             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------+---------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C70F896C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                               ; To                                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 219.83 MHz ( period = 4.549 ns )                    ; clk_1hz:clk_1hz_generator|divide_by_10:d1|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d1|Q        ; clk        ; clk      ; None                        ; None                      ; 0.551 ns                ;
+; N/A                                     ; 225.17 MHz ( period = 4.441 ns )                    ; clk_1hz:clk_1hz_generator|divide_by_10:d3|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d3|Q        ; clk        ; clk      ; None                        ; None                      ; 0.553 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 293.94 MHz ( period = 3.402 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.50 MHz ( period = 3.200 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.980 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.987 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 315.56 MHz ( period = 3.169 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.955 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 320.31 MHz ( period = 3.122 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.914 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.882 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 328.73 MHz ( period = 3.042 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.835 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 329.82 MHz ( period = 3.032 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.829 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 331.56 MHz ( period = 3.016 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.803 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 332.67 MHz ( period = 3.006 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.797 ns                ;
+; N/A                                     ; 333.89 MHz ( period = 2.995 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|coinBalance_[3]        ; clk        ; clk      ; None                        ; None                      ; 2.781 ns                ;
+; N/A                                     ; 342.35 MHz ( period = 2.921 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.708 ns                ;
+; N/A                                     ; 342.35 MHz ( period = 2.921 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.708 ns                ;
+; N/A                                     ; 342.35 MHz ( period = 2.921 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.708 ns                ;
+; N/A                                     ; 342.35 MHz ( period = 2.921 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.708 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.663 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 351.62 MHz ( period = 2.844 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 353.98 MHz ( period = 2.825 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.617 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total[1]               ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total_[1]              ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total_[0]              ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total[2]               ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total_[2]              ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total[3]               ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 357.27 MHz ( period = 2.799 ns )                    ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|total[0]               ; clk        ; clk      ; None                        ; None                      ; 2.585 ns                ;
+; N/A                                     ; 366.97 MHz ( period = 2.725 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|coinBalance_[3]        ; clk        ; clk      ; None                        ; None                      ; 2.511 ns                ;
+; N/A                                     ; 368.46 MHz ( period = 2.714 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 368.46 MHz ( period = 2.714 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 368.46 MHz ( period = 2.714 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 368.46 MHz ( period = 2.714 ns )                    ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.500 ns                ;
+; N/A                                     ; 377.93 MHz ( period = 2.646 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|ITEM.00                ; clk        ; clk      ; None                        ; None                      ; 2.432 ns                ;
+; N/A                                     ; 377.93 MHz ( period = 2.646 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|ITEM.01                ; clk        ; clk      ; None                        ; None                      ; 2.432 ns                ;
+; N/A                                     ; 377.93 MHz ( period = 2.646 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|ITEM.10                ; clk        ; clk      ; None                        ; None                      ; 2.432 ns                ;
+; N/A                                     ; 377.93 MHz ( period = 2.646 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|ITEM.11                ; clk        ; clk      ; None                        ; None                      ; 2.432 ns                ;
+; N/A                                     ; 378.64 MHz ( period = 2.641 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.427 ns                ;
+; N/A                                     ; 378.64 MHz ( period = 2.641 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.427 ns                ;
+; N/A                                     ; 378.64 MHz ( period = 2.641 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.427 ns                ;
+; N/A                                     ; 378.64 MHz ( period = 2.641 ns )                    ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.427 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change[1]              ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change[2]              ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change[3]              ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change[0]              ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|selectItem[0]          ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|selectItem[1]          ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|selectItem[2]          ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.32 MHz ( period = 2.562 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|selectItem[3]          ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.47 MHz ( period = 2.561 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.47 MHz ( period = 2.561 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.47 MHz ( period = 2.561 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 390.47 MHz ( period = 2.561 ns )                    ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.348 ns                ;
+; N/A                                     ; 392.00 MHz ( period = 2.551 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 392.00 MHz ( period = 2.551 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 392.00 MHz ( period = 2.551 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 392.00 MHz ( period = 2.551 ns )                    ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 392.16 MHz ( period = 2.550 ns )                    ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 2.332 ns                ;
+; N/A                                     ; 403.71 MHz ( period = 2.477 ns )                    ; clk_1hz:clk_1hz_generator|divide_by_10:d4|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d4|Q        ; clk        ; clk      ; None                        ; None                      ; 0.546 ns                ;
+; N/A                                     ; 403.88 MHz ( period = 2.476 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|price[2]               ; clk        ; clk      ; None                        ; None                      ; 2.256 ns                ;
+; N/A                                     ; 403.88 MHz ( period = 2.476 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|price[1]               ; clk        ; clk      ; None                        ; None                      ; 2.256 ns                ;
+; N/A                                     ; 403.88 MHz ( period = 2.476 ns )                    ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|price[0]               ; clk        ; clk      ; None                        ; None                      ; 2.256 ns                ;
+; N/A                                     ; 418.59 MHz ( period = 2.389 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.176 ns                ;
+; N/A                                     ; 418.59 MHz ( period = 2.389 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.176 ns                ;
+; N/A                                     ; 418.59 MHz ( period = 2.389 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.176 ns                ;
+; N/A                                     ; 418.59 MHz ( period = 2.389 ns )                    ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.176 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 2.130 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 2.130 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 2.130 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 2.130 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[1]               ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 2.124 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_10:d0|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d0|Q        ; clk        ; clk      ; None                        ; None                      ; 0.556 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_10:d2|count[2] ; clk_1hz:clk_1hz_generator|divide_by_10:d2|Q        ; clk        ; clk      ; None                        ; None                      ; 0.549 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[0]               ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 2.051 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|coinBalance_[3]        ; clk        ; clk      ; None                        ; None                      ; 2.025 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|coinBalance[1]         ; clk        ; clk      ; None                        ; None                      ; 1.989 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|coinBalance[2]         ; clk        ; clk      ; None                        ; None                      ; 1.989 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|coinBalance[3]         ; clk        ; clk      ; None                        ; None                      ; 1.989 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|coinBalance[0]         ; clk        ; clk      ; None                        ; None                      ; 1.989 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 1.972 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[2]        ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 1.966 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[4] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|Q        ; clk        ; clk      ; None                        ; None                      ; 0.819 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[3]        ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 1.800 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|price[2]               ; ControlModule:controlModule|alarm                  ; clk        ; clk      ; None                        ; None                      ; 1.754 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|Q        ; clk        ; clk      ; None                        ; None                      ; 0.720 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[1]        ; ControlModule:controlModule|coinBalance_[2]        ; clk        ; clk      ; None                        ; None                      ; 1.687 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change_[1]             ; clk        ; clk      ; None                        ; None                      ; 1.684 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change_[2]             ; clk        ; clk      ; None                        ; None                      ; 1.684 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change_[3]             ; clk        ; clk      ; None                        ; None                      ; 1.684 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|state.SELECTED         ; ControlModule:controlModule|change_[0]             ; clk        ; clk      ; None                        ; None                      ; 1.684 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[0] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[4] ; clk        ; clk      ; None                        ; None                      ; 1.531 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[1] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[4] ; clk        ; clk      ; None                        ; None                      ; 1.460 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[0] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk        ; clk      ; None                        ; None                      ; 1.460 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|coinBalance_[0]        ; ControlModule:controlModule|coinBalance_[2]        ; clk        ; clk      ; None                        ; None                      ; 1.425 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[1] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk        ; clk      ; None                        ; None                      ; 1.389 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[2] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[4] ; clk        ; clk      ; None                        ; None                      ; 1.350 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; ControlModule:controlModule|total_[0]              ; ControlModule:controlModule|total_[3]              ; clk        ; clk      ; None                        ; None                      ; 1.338 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[4] ; clk        ; clk      ; None                        ; None                      ; 1.331 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk        ; clk      ; None                        ; None                      ; 1.331 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[2] ; clk        ; clk      ; None                        ; None                      ; 1.331 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[3] ; clk_1hz:clk_1hz_generator|divide_by_50:d6|count[1] ; clk        ; clk      ; None                        ; None                      ; 1.331 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                    ;                                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From       ; To                                          ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------------------------+----------+
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -4.233 ns  ; coin2      ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -4.237 ns  ; coin1      ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -4.572 ns  ; coin2      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -4.572 ns  ; coin2      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -4.572 ns  ; coin2      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -4.572 ns  ; coin2      ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -4.576 ns  ; coin1      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -4.576 ns  ; coin1      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -4.576 ns  ; coin1      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -4.576 ns  ; coin1      ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -4.582 ns  ; coin10     ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -4.849 ns  ; coin5      ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -4.921 ns  ; coin10     ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -4.921 ns  ; coin10     ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -4.921 ns  ; coin10     ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -4.921 ns  ; coin10     ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -5.188 ns  ; coin5      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -5.188 ns  ; coin5      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -5.188 ns  ; coin5      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -5.188 ns  ; coin5      ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -5.536 ns  ; resetTotal ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -5.643 ns  ; select5    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; -5.643 ns  ; select5    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; -5.643 ns  ; select5    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; -5.643 ns  ; select5    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; -5.674 ns  ; coin2      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; -5.674 ns  ; coin2      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; -5.674 ns  ; coin2      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; -5.674 ns  ; coin2      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; -5.678 ns  ; coin1      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; -5.678 ns  ; coin1      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; -5.678 ns  ; coin1      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; -5.678 ns  ; coin1      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; -5.717 ns  ; confirm    ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -5.799 ns  ; coin10     ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -5.862 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; -5.875 ns  ; resetTotal ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -5.875 ns  ; resetTotal ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -5.875 ns  ; resetTotal ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -5.875 ns  ; resetTotal ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -6.023 ns  ; coin10     ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; -6.023 ns  ; coin10     ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; -6.023 ns  ; coin10     ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; -6.023 ns  ; coin10     ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; -6.056 ns  ; confirm    ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; -6.056 ns  ; confirm    ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; -6.056 ns  ; confirm    ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; -6.056 ns  ; confirm    ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; -6.062 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; -6.078 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; -6.089 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; -6.093 ns  ; select5    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -6.107 ns  ; coin1      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.141 ns  ; select5    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -6.204 ns  ; coin2      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -6.215 ns  ; confirm    ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.238 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; -6.245 ns  ; select5    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; -6.290 ns  ; coin5      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; -6.290 ns  ; coin5      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; -6.290 ns  ; coin5      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; -6.290 ns  ; coin5      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -6.325 ns  ; coin5      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.354 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; -6.489 ns  ; coin2      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -6.493 ns  ; coin1      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -6.545 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; -6.629 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; -6.672 ns  ; resetTotal ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; -6.672 ns  ; resetTotal ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; -6.672 ns  ; resetTotal ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; -6.672 ns  ; resetTotal ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; -6.697 ns  ; select1    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; -6.697 ns  ; select1    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; -6.697 ns  ; select1    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; -6.697 ns  ; select1    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; -6.838 ns  ; coin10     ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -6.842 ns  ; resetTotal ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; -6.842 ns  ; resetTotal ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; -6.842 ns  ; resetTotal ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; -6.875 ns  ; select2    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; -6.875 ns  ; select2    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; -6.875 ns  ; select2    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; -6.875 ns  ; select2    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; -6.910 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; -7.050 ns  ; select10   ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; -7.050 ns  ; select10   ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; -7.050 ns  ; select10   ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; -7.050 ns  ; select10   ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; -7.060 ns  ; select1    ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; -7.105 ns  ; coin5      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -7.107 ns  ; select1    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; -7.133 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; -7.141 ns  ; select2    ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; -7.192 ns  ; select1    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; -7.227 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; -7.227 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; -7.227 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; -7.227 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; -7.242 ns  ; resetTotal ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; -7.299 ns  ; select1    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; -7.305 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; -7.322 ns  ; select2    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; -7.374 ns  ; select2    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; -7.402 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; -7.477 ns  ; select2    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; -7.615 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; -7.615 ns  ; resetTotal ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -7.618 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; -7.632 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; -7.694 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; -7.694 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; -7.694 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; -7.708 ns  ; confirm    ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; -8.033 ns  ; select10   ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; -8.105 ns  ; resetTotal ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;            ;                                             ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                ;
++-------+--------------+------------+--------------------------------------------+----------------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                       ; To                   ; From Clock ;
++-------+--------------+------------+--------------------------------------------+----------------------+------------+
+; N/A   ; None         ; 23.348 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[0]       ; clk        ;
+; N/A   ; None         ; 23.300 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[0]       ; clk        ;
+; N/A   ; None         ; 23.203 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[0]       ; clk        ;
+; N/A   ; None         ; 23.057 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[6]       ; clk        ;
+; N/A   ; None         ; 23.025 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[2]       ; clk        ;
+; N/A   ; None         ; 23.009 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[6]       ; clk        ;
+; N/A   ; None         ; 23.009 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[3]       ; clk        ;
+; N/A   ; None         ; 22.977 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[2]       ; clk        ;
+; N/A   ; None         ; 22.961 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[3]       ; clk        ;
+; N/A   ; None         ; 22.912 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[6]       ; clk        ;
+; N/A   ; None         ; 22.880 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[2]       ; clk        ;
+; N/A   ; None         ; 22.864 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[3]       ; clk        ;
+; N/A   ; None         ; 22.823 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[5]       ; clk        ;
+; N/A   ; None         ; 22.775 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[5]       ; clk        ;
+; N/A   ; None         ; 22.742 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[1]        ; clk        ;
+; N/A   ; None         ; 22.711 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[2]        ; clk        ;
+; N/A   ; None         ; 22.681 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[1]        ; clk        ;
+; N/A   ; None         ; 22.678 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[5]       ; clk        ;
+; N/A   ; None         ; 22.650 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[2]        ; clk        ;
+; N/A   ; None         ; 22.645 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[1]        ; clk        ;
+; N/A   ; None         ; 22.614 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[2]        ; clk        ;
+; N/A   ; None         ; 22.536 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[1]       ; clk        ;
+; N/A   ; None         ; 22.512 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[4]       ; clk        ;
+; N/A   ; None         ; 22.488 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[1]       ; clk        ;
+; N/A   ; None         ; 22.464 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[4]       ; clk        ;
+; N/A   ; None         ; 22.391 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[1]       ; clk        ;
+; N/A   ; None         ; 22.367 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[4]       ; clk        ;
+; N/A   ; None         ; 22.218 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[0]        ; clk        ;
+; N/A   ; None         ; 22.170 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[4]  ; clk        ;
+; N/A   ; None         ; 22.157 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[0]        ; clk        ;
+; N/A   ; None         ; 22.121 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[0]        ; clk        ;
+; N/A   ; None         ; 22.092 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[4]  ; clk        ;
+; N/A   ; None         ; 22.028 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[4]  ; clk        ;
+; N/A   ; None         ; 21.975 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[2]  ; clk        ;
+; N/A   ; None         ; 21.926 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[6]  ; clk        ;
+; N/A   ; None         ; 21.924 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[5]        ; clk        ;
+; N/A   ; None         ; 21.914 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[6]        ; clk        ;
+; N/A   ; None         ; 21.897 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[2]  ; clk        ;
+; N/A   ; None         ; 21.863 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[5]        ; clk        ;
+; N/A   ; None         ; 21.853 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[6]        ; clk        ;
+; N/A   ; None         ; 21.848 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[6]  ; clk        ;
+; N/A   ; None         ; 21.833 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[2]  ; clk        ;
+; N/A   ; None         ; 21.827 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[5]        ; clk        ;
+; N/A   ; None         ; 21.817 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[6]        ; clk        ;
+; N/A   ; None         ; 21.784 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[6]  ; clk        ;
+; N/A   ; None         ; 21.736 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[5]  ; clk        ;
+; N/A   ; None         ; 21.732 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[3]  ; clk        ;
+; N/A   ; None         ; 21.725 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[3]        ; clk        ;
+; N/A   ; None         ; 21.725 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[1]  ; clk        ;
+; N/A   ; None         ; 21.715 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[0]  ; clk        ;
+; N/A   ; None         ; 21.710 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[4]        ; clk        ;
+; N/A   ; None         ; 21.664 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[3]        ; clk        ;
+; N/A   ; None         ; 21.658 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[5]  ; clk        ;
+; N/A   ; None         ; 21.654 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[3]  ; clk        ;
+; N/A   ; None         ; 21.649 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[4]        ; clk        ;
+; N/A   ; None         ; 21.647 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[1]  ; clk        ;
+; N/A   ; None         ; 21.637 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[0]  ; clk        ;
+; N/A   ; None         ; 21.628 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[3]        ; clk        ;
+; N/A   ; None         ; 21.613 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[4]        ; clk        ;
+; N/A   ; None         ; 21.594 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[5]  ; clk        ;
+; N/A   ; None         ; 21.590 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[3]  ; clk        ;
+; N/A   ; None         ; 21.583 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[1]  ; clk        ;
+; N/A   ; None         ; 21.573 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[0]  ; clk        ;
+; N/A   ; None         ; 20.965 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[7]       ; clk        ;
+; N/A   ; None         ; 20.961 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[12]      ; clk        ;
+; N/A   ; None         ; 20.851 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[1]        ; clk        ;
+; N/A   ; None         ; 20.827 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[7]       ; clk        ;
+; N/A   ; None         ; 20.823 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[2]        ; clk        ;
+; N/A   ; None         ; 20.823 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[12]      ; clk        ;
+; N/A   ; None         ; 20.746 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[11]      ; clk        ;
+; N/A   ; None         ; 20.684 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[7]       ; clk        ;
+; N/A   ; None         ; 20.680 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[12]      ; clk        ;
+; N/A   ; None         ; 20.608 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[11]      ; clk        ;
+; N/A   ; None         ; 20.465 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[11]      ; clk        ;
+; N/A   ; None         ; 20.456 ns  ; ControlModule:controlModule|change[3]      ; change_7seg[10]      ; clk        ;
+; N/A   ; None         ; 20.389 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[10] ; clk        ;
+; N/A   ; None         ; 20.340 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[0]        ; clk        ;
+; N/A   ; None         ; 20.324 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[0]       ; clk        ;
+; N/A   ; None         ; 20.318 ns  ; ControlModule:controlModule|change[1]      ; change_7seg[10]      ; clk        ;
+; N/A   ; None         ; 20.299 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[7]        ; clk        ;
+; N/A   ; None         ; 20.247 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[10] ; clk        ;
+; N/A   ; None         ; 20.229 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[4]  ; clk        ;
+; N/A   ; None         ; 20.212 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[6]        ; clk        ;
+; N/A   ; None         ; 20.175 ns  ; ControlModule:controlModule|change[2]      ; change_7seg[10]      ; clk        ;
+; N/A   ; None         ; 20.125 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[7]        ; clk        ;
+; N/A   ; None         ; 20.106 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[10] ; clk        ;
+; N/A   ; None         ; 20.100 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[2]        ; clk        ;
+; N/A   ; None         ; 20.080 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[11]       ; clk        ;
+; N/A   ; None         ; 20.077 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[5]        ; clk        ;
+; N/A   ; None         ; 20.070 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[12]       ; clk        ;
+; N/A   ; None         ; 20.056 ns  ; ControlModule:controlModule|total[3]       ; total_7seg[10]       ; clk        ;
+; N/A   ; None         ; 20.053 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[1]        ; clk        ;
+; N/A   ; None         ; 20.049 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[11] ; clk        ;
+; N/A   ; None         ; 20.045 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[6]        ; clk        ;
+; N/A   ; None         ; 20.031 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[6]        ; clk        ;
+; N/A   ; None         ; 20.029 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[7]  ; clk        ;
+; N/A   ; None         ; 20.028 ns  ; ControlModule:controlModule|coinBalance[3] ; coinBalance_7seg[12] ; clk        ;
+; N/A   ; None         ; 20.026 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[4]        ; clk        ;
+; N/A   ; None         ; 20.003 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[6]       ; clk        ;
+; N/A   ; None         ; 20.000 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[2]  ; clk        ;
+; N/A   ; None         ; 19.996 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[0]        ; clk        ;
+; N/A   ; None         ; 19.983 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[7]        ; clk        ;
+; N/A   ; None         ; 19.972 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[6]  ; clk        ;
+; N/A   ; None         ; 19.971 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[2]        ; clk        ;
+; N/A   ; None         ; 19.956 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[2]       ; clk        ;
+; N/A   ; None         ; 19.942 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[3]       ; clk        ;
+; N/A   ; None         ; 19.907 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[11] ; clk        ;
+; N/A   ; None         ; 19.906 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[11]       ; clk        ;
+; N/A   ; None         ; 19.906 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[2]        ; clk        ;
+; N/A   ; None         ; 19.896 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[12]       ; clk        ;
+; N/A   ; None         ; 19.887 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[7]  ; clk        ;
+; N/A   ; None         ; 19.886 ns  ; ControlModule:controlModule|coinBalance[1] ; coinBalance_7seg[12] ; clk        ;
+; N/A   ; None         ; 19.884 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[0]        ; clk        ;
+; N/A   ; None         ; 19.882 ns  ; ControlModule:controlModule|total[2]       ; total_7seg[10]       ; clk        ;
+; N/A   ; None         ; 19.873 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[4]        ; clk        ;
+; N/A   ; None         ; 19.853 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[4]        ; clk        ;
+; N/A   ; None         ; 19.838 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[3]        ; clk        ;
+; N/A   ; None         ; 19.818 ns  ; ControlModule:controlModule|total[0]       ; total_7seg[4]        ; clk        ;
+; N/A   ; None         ; 19.789 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[5]  ; clk        ;
+; N/A   ; None         ; 19.786 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[3]  ; clk        ;
+; N/A   ; None         ; 19.784 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[1]  ; clk        ;
+; N/A   ; None         ; 19.780 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[3]        ; clk        ;
+; N/A   ; None         ; 19.774 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[1]        ; clk        ;
+; N/A   ; None         ; 19.768 ns  ; ControlModule:controlModule|coinBalance[0] ; coinBalance_7seg[0]  ; clk        ;
+; N/A   ; None         ; 19.766 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[11] ; clk        ;
+; N/A   ; None         ; 19.764 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[11]       ; clk        ;
+; N/A   ; None         ; 19.759 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[5]       ; clk        ;
+; N/A   ; None         ; 19.754 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[12]       ; clk        ;
+; N/A   ; None         ; 19.746 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[7]  ; clk        ;
+; N/A   ; None         ; 19.745 ns  ; ControlModule:controlModule|coinBalance[2] ; coinBalance_7seg[12] ; clk        ;
+; N/A   ; None         ; 19.740 ns  ; ControlModule:controlModule|total[1]       ; total_7seg[10]       ; clk        ;
+; N/A   ; None         ; 19.635 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[3]        ; clk        ;
+; N/A   ; None         ; 19.626 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[3]        ; clk        ;
+; N/A   ; None         ; 19.550 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[6]        ; clk        ;
+; N/A   ; None         ; 19.544 ns  ; ControlModule:controlModule|price[1]       ; price_7seg[5]        ; clk        ;
+; N/A   ; None         ; 19.469 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[4]       ; clk        ;
+; N/A   ; None         ; 19.467 ns  ; ControlModule:controlModule|change[0]      ; change_7seg[1]       ; clk        ;
+; N/A   ; None         ; 19.397 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[5]        ; clk        ;
+; N/A   ; None         ; 19.393 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[1]        ; clk        ;
+; N/A   ; None         ; 19.389 ns  ; ControlModule:controlModule|price[2]       ; price_7seg[5]        ; clk        ;
+; N/A   ; None         ; 19.378 ns  ; ControlModule:controlModule|price[0]       ; price_7seg[0]        ; clk        ;
+; N/A   ; None         ; 18.906 ns  ; ControlModule:controlModule|selectItem[2]  ; selectItem[2]        ; clk        ;
+; N/A   ; None         ; 18.871 ns  ; ControlModule:controlModule|selectItem[1]  ; selectItem[1]        ; clk        ;
+; N/A   ; None         ; 18.805 ns  ; ControlModule:controlModule|selectItem[0]  ; selectItem[0]        ; clk        ;
+; N/A   ; None         ; 18.636 ns  ; ControlModule:controlModule|alarm          ; alarm                ; clk        ;
+; N/A   ; None         ; 18.605 ns  ; ControlModule:controlModule|selectItem[3]  ; selectItem[3]        ; clk        ;
++-------+--------------+------------+--------------------------------------------+----------------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+---------------------------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From       ; To                                          ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+---------------------------------------------+----------+
+; N/A                                     ; None                                                ; 10.046 ns ; rst        ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 10.046 ns ; rst        ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 10.046 ns ; rst        ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 10.046 ns ; rst        ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 9.975 ns  ; rst        ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 9.975 ns  ; rst        ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 9.975 ns  ; rst        ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 9.975 ns  ; rst        ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 9.792 ns  ; rst        ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 8.702 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; 8.595 ns  ; select2    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 8.594 ns  ; select2    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 8.594 ns  ; select2    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 8.518 ns  ; select1    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 8.513 ns  ; select1    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 8.433 ns  ; resetTotal ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 8.432 ns  ; resetTotal ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 8.431 ns  ; resetTotal ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 8.416 ns  ; select1    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 8.413 ns  ; select1    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 8.335 ns  ; resetTotal ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; 8.332 ns  ; resetTotal ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 8.292 ns  ; resetTotal ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 8.292 ns  ; resetTotal ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 8.292 ns  ; resetTotal ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 8.292 ns  ; resetTotal ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 8.263 ns  ; select10   ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; 8.087 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; 7.938 ns  ; confirm    ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 7.930 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; 7.924 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; 7.924 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; 7.924 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; 7.862 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; 7.848 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[0] ; clk      ;
+; N/A                                     ; None                                                ; 7.845 ns  ; resetTotal ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; 7.845 ns  ; resetTotal ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 7.820 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; 7.707 ns  ; select2    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; 7.623 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; 7.604 ns  ; select2    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; 7.552 ns  ; select2    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; 7.535 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; 7.529 ns  ; select1    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; 7.475 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; 7.471 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[3] ; clk      ;
+; N/A                                     ; None                                                ; 7.457 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; 7.457 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; 7.457 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; 7.457 ns  ; resetTotal ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; 7.447 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[1] ; clk      ;
+; N/A                                     ; None                                                ; 7.422 ns  ; select1    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; 7.371 ns  ; select2    ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; 7.362 ns  ; select5    ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 7.362 ns  ; select5    ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 7.337 ns  ; select1    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; 7.335 ns  ; coin5      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 7.290 ns  ; select1    ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; 7.280 ns  ; select10   ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 7.280 ns  ; select10   ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 7.280 ns  ; select10   ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 7.280 ns  ; select10   ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 7.105 ns  ; select2    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 7.072 ns  ; resetTotal ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; 7.072 ns  ; resetTotal ; ControlModule:controlModule|price[1]        ; clk      ;
+; N/A                                     ; None                                                ; 7.072 ns  ; resetTotal ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; 7.068 ns  ; coin10     ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 6.956 ns  ; coin5      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; 6.902 ns  ; resetTotal ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 6.902 ns  ; resetTotal ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 6.902 ns  ; resetTotal ; ControlModule:controlModule|ITEM.10         ; clk      ;
+; N/A                                     ; None                                                ; 6.902 ns  ; resetTotal ; ControlModule:controlModule|ITEM.11         ; clk      ;
+; N/A                                     ; None                                                ; 6.859 ns  ; coin10     ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; 6.767 ns  ; resetTotal ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; 6.723 ns  ; coin1      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 6.719 ns  ; coin2      ; ControlModule:controlModule|alarm           ; clk      ;
+; N/A                                     ; None                                                ; 6.687 ns  ; coin1      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.555 ns  ; coin5      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 6.520 ns  ; coin5      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; 6.520 ns  ; coin5      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; 6.520 ns  ; coin5      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; 6.520 ns  ; coin5      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; 6.475 ns  ; select5    ; ControlModule:controlModule|state.SELECTED  ; clk      ;
+; N/A                                     ; None                                                ; 6.464 ns  ; coin2      ; ControlModule:controlModule|coinBalance_[2] ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.445 ns  ; confirm    ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.434 ns  ; coin2      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 6.371 ns  ; select5    ; ControlModule:controlModule|price[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.337 ns  ; coin1      ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 6.323 ns  ; select5    ; ControlModule:controlModule|price[0]        ; clk      ;
+; N/A                                     ; None                                                ; 6.286 ns  ; confirm    ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 6.286 ns  ; confirm    ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 6.286 ns  ; confirm    ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 6.286 ns  ; confirm    ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 6.253 ns  ; coin10     ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; 6.253 ns  ; coin10     ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; 6.253 ns  ; coin10     ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; 6.253 ns  ; coin10     ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; 6.105 ns  ; resetTotal ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 6.105 ns  ; resetTotal ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 6.105 ns  ; resetTotal ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 6.105 ns  ; resetTotal ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total[1]        ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total_[1]       ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total_[0]       ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total[2]        ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total_[2]       ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total[3]        ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total_[3]       ; clk      ;
+; N/A                                     ; None                                                ; 6.029 ns  ; coin10     ; ControlModule:controlModule|total[0]        ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; 5.947 ns  ; confirm    ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; 5.908 ns  ; coin1      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; 5.908 ns  ; coin1      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; 5.908 ns  ; coin1      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; 5.908 ns  ; coin1      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; 5.904 ns  ; coin2      ; ControlModule:controlModule|coinBalance[1]  ; clk      ;
+; N/A                                     ; None                                                ; 5.904 ns  ; coin2      ; ControlModule:controlModule|coinBalance[2]  ; clk      ;
+; N/A                                     ; None                                                ; 5.904 ns  ; coin2      ; ControlModule:controlModule|coinBalance[3]  ; clk      ;
+; N/A                                     ; None                                                ; 5.904 ns  ; coin2      ; ControlModule:controlModule|coinBalance[0]  ; clk      ;
+; N/A                                     ; None                                                ; 5.873 ns  ; select5    ; ControlModule:controlModule|ITEM.00         ; clk      ;
+; N/A                                     ; None                                                ; 5.873 ns  ; select5    ; ControlModule:controlModule|ITEM.01         ; clk      ;
+; N/A                                     ; None                                                ; 5.418 ns  ; coin5      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 5.418 ns  ; coin5      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 5.418 ns  ; coin5      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 5.418 ns  ; coin5      ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 5.151 ns  ; coin10     ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 5.151 ns  ; coin10     ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 5.151 ns  ; coin10     ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 5.151 ns  ; coin10     ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; 5.079 ns  ; coin5      ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|change[1]       ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|change[2]       ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|change[3]       ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|change[0]       ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|selectItem[0]   ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|selectItem[1]   ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|selectItem[2]   ; clk      ;
+; N/A                                     ; None                                                ; 4.812 ns  ; coin10     ; ControlModule:controlModule|selectItem[3]   ; clk      ;
+; N/A                                     ; None                                                ; 4.806 ns  ; coin1      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 4.806 ns  ; coin1      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 4.806 ns  ; coin1      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; N/A                                     ; None                                                ; 4.806 ns  ; coin1      ; ControlModule:controlModule|change_[0]      ; clk      ;
+; N/A                                     ; None                                                ; 4.802 ns  ; coin2      ; ControlModule:controlModule|change_[1]      ; clk      ;
+; N/A                                     ; None                                                ; 4.802 ns  ; coin2      ; ControlModule:controlModule|change_[2]      ; clk      ;
+; N/A                                     ; None                                                ; 4.802 ns  ; coin2      ; ControlModule:controlModule|change_[3]      ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;            ;                                             ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+---------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Sep 04 21:05:58 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off VendingMachine -c VendingMachine --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 7 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_50:d6|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d5|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d4|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d3|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d2|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d1|Q" as buffer
+    Info: Detected ripple clock "clk_1hz:clk_1hz_generator|divide_by_10:d0|Q" as buffer
+Info: Clock "clk" has Internal fmax of 219.83 MHz between source register "clk_1hz:clk_1hz_generator|divide_by_10:d1|count[2]" and destination register "clk_1hz:clk_1hz_generator|divide_by_10:d1|Q" (period= 4.549 ns)
+    Info: + Longest register to register delay is 0.551 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X49_Y1_N11; Fanout = 4; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|count[2]'
+        Info: 2: + IC(0.317 ns) + CELL(0.150 ns) = 0.467 ns; Loc. = LCCOMB_X49_Y1_N30; Fanout = 1; COMB Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.551 ns; Loc. = LCFF_X49_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q'
+        Info: Total cell delay = 0.234 ns ( 42.47 % )
+        Info: Total interconnect delay = 0.317 ns ( 57.53 % )
+    Info: - Smallest clock skew is -3.784 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 10.443 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.338 ns) + CELL(0.787 ns) = 2.114 ns; Loc. = LCFF_X1_Y25_N21; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_50:d6|Q'
+            Info: 3: + IC(2.788 ns) + CELL(0.787 ns) = 5.689 ns; Loc. = LCFF_X48_Y2_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d5|Q'
+            Info: 4: + IC(0.457 ns) + CELL(0.787 ns) = 6.933 ns; Loc. = LCFF_X49_Y2_N7; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d4|Q'
+            Info: 5: + IC(0.491 ns) + CELL(0.787 ns) = 8.211 ns; Loc. = LCFF_X50_Y2_N17; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d3|Q'
+            Info: 6: + IC(0.472 ns) + CELL(0.787 ns) = 9.470 ns; Loc. = LCFF_X50_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q'
+            Info: 7: + IC(0.436 ns) + CELL(0.537 ns) = 10.443 ns; Loc. = LCFF_X49_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q'
+            Info: Total cell delay = 5.461 ns ( 52.29 % )
+            Info: Total interconnect delay = 4.982 ns ( 47.71 % )
+        Info: - Longest clock path from clock "clk" to source register is 14.227 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.338 ns) + CELL(0.787 ns) = 2.114 ns; Loc. = LCFF_X1_Y25_N21; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_50:d6|Q'
+            Info: 3: + IC(2.788 ns) + CELL(0.787 ns) = 5.689 ns; Loc. = LCFF_X48_Y2_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d5|Q'
+            Info: 4: + IC(0.457 ns) + CELL(0.787 ns) = 6.933 ns; Loc. = LCFF_X49_Y2_N7; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d4|Q'
+            Info: 5: + IC(0.491 ns) + CELL(0.787 ns) = 8.211 ns; Loc. = LCFF_X50_Y2_N17; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d3|Q'
+            Info: 6: + IC(0.472 ns) + CELL(0.787 ns) = 9.470 ns; Loc. = LCFF_X50_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q'
+            Info: 7: + IC(2.996 ns) + CELL(0.000 ns) = 12.466 ns; Loc. = CLKCTRL_G8; Fanout = 3; COMB Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q~clkctrl'
+            Info: 8: + IC(1.224 ns) + CELL(0.537 ns) = 14.227 ns; Loc. = LCFF_X49_Y1_N11; Fanout = 4; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|count[2]'
+            Info: Total cell delay = 5.461 ns ( 38.38 % )
+            Info: Total interconnect delay = 8.766 ns ( 61.62 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "ControlModule:controlModule|change[1]" (data pin = "coin2", clock pin = "clk") is -4.233 ns
+    Info: + Longest pin to register delay is 10.417 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D22; Fanout = 6; PIN Node = 'coin2'
+        Info: 2: + IC(5.681 ns) + CELL(0.371 ns) = 6.892 ns; Loc. = LCCOMB_X65_Y44_N30; Fanout = 4; COMB Node = 'ControlModule:controlModule|change_[3]~4'
+        Info: 3: + IC(0.735 ns) + CELL(0.413 ns) = 8.040 ns; Loc. = LCCOMB_X63_Y44_N12; Fanout = 2; COMB Node = 'ControlModule:controlModule|change_[3]~5'
+        Info: 4: + IC(0.723 ns) + CELL(0.275 ns) = 9.038 ns; Loc. = LCCOMB_X66_Y44_N6; Fanout = 8; COMB Node = 'ControlModule:controlModule|change[3]~6'
+        Info: 5: + IC(0.719 ns) + CELL(0.660 ns) = 10.417 ns; Loc. = LCFF_X65_Y45_N27; Fanout = 4; REG Node = 'ControlModule:controlModule|change[1]'
+        Info: Total cell delay = 2.559 ns ( 24.57 % )
+        Info: Total interconnect delay = 7.858 ns ( 75.43 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 14.614 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.338 ns) + CELL(0.787 ns) = 2.114 ns; Loc. = LCFF_X1_Y25_N21; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_50:d6|Q'
+        Info: 3: + IC(2.788 ns) + CELL(0.787 ns) = 5.689 ns; Loc. = LCFF_X48_Y2_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d5|Q'
+        Info: 4: + IC(0.457 ns) + CELL(0.787 ns) = 6.933 ns; Loc. = LCFF_X49_Y2_N7; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d4|Q'
+        Info: 5: + IC(0.491 ns) + CELL(0.787 ns) = 8.211 ns; Loc. = LCFF_X50_Y2_N17; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d3|Q'
+        Info: 6: + IC(0.472 ns) + CELL(0.787 ns) = 9.470 ns; Loc. = LCFF_X50_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q'
+        Info: 7: + IC(0.436 ns) + CELL(0.787 ns) = 10.693 ns; Loc. = LCFF_X49_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q'
+        Info: 8: + IC(0.467 ns) + CELL(0.787 ns) = 11.947 ns; Loc. = LCFF_X48_Y1_N17; Fanout = 2; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q'
+        Info: 9: + IC(0.878 ns) + CELL(0.000 ns) = 12.825 ns; Loc. = CLKCTRL_G14; Fanout = 37; COMB Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q~clkctrl'
+        Info: 10: + IC(1.252 ns) + CELL(0.537 ns) = 14.614 ns; Loc. = LCFF_X65_Y45_N27; Fanout = 4; REG Node = 'ControlModule:controlModule|change[1]'
+        Info: Total cell delay = 7.035 ns ( 48.14 % )
+        Info: Total interconnect delay = 7.579 ns ( 51.86 % )
+Info: tco from clock "clk" to destination pin "change_7seg[0]" through register "ControlModule:controlModule|change[1]" is 23.348 ns
+    Info: + Longest clock path from clock "clk" to source register is 14.614 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.338 ns) + CELL(0.787 ns) = 2.114 ns; Loc. = LCFF_X1_Y25_N21; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_50:d6|Q'
+        Info: 3: + IC(2.788 ns) + CELL(0.787 ns) = 5.689 ns; Loc. = LCFF_X48_Y2_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d5|Q'
+        Info: 4: + IC(0.457 ns) + CELL(0.787 ns) = 6.933 ns; Loc. = LCFF_X49_Y2_N7; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d4|Q'
+        Info: 5: + IC(0.491 ns) + CELL(0.787 ns) = 8.211 ns; Loc. = LCFF_X50_Y2_N17; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d3|Q'
+        Info: 6: + IC(0.472 ns) + CELL(0.787 ns) = 9.470 ns; Loc. = LCFF_X50_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q'
+        Info: 7: + IC(0.436 ns) + CELL(0.787 ns) = 10.693 ns; Loc. = LCFF_X49_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q'
+        Info: 8: + IC(0.467 ns) + CELL(0.787 ns) = 11.947 ns; Loc. = LCFF_X48_Y1_N17; Fanout = 2; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q'
+        Info: 9: + IC(0.878 ns) + CELL(0.000 ns) = 12.825 ns; Loc. = CLKCTRL_G14; Fanout = 37; COMB Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q~clkctrl'
+        Info: 10: + IC(1.252 ns) + CELL(0.537 ns) = 14.614 ns; Loc. = LCFF_X65_Y45_N27; Fanout = 4; REG Node = 'ControlModule:controlModule|change[1]'
+        Info: Total cell delay = 7.035 ns ( 48.14 % )
+        Info: Total interconnect delay = 7.579 ns ( 51.86 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 8.484 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X65_Y45_N27; Fanout = 4; REG Node = 'ControlModule:controlModule|change[1]'
+        Info: 2: + IC(0.773 ns) + CELL(0.393 ns) = 1.166 ns; Loc. = LCCOMB_X61_Y45_N22; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_05m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[1]~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 1.237 ns; Loc. = LCCOMB_X61_Y45_N24; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_05m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[2]~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 1.308 ns; Loc. = LCCOMB_X61_Y45_N26; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_05m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[3]~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 1.718 ns; Loc. = LCCOMB_X61_Y45_N28; Fanout = 3; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_05m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[4]~6'
+        Info: 6: + IC(0.688 ns) + CELL(0.393 ns) = 2.799 ns; Loc. = LCCOMB_X65_Y45_N24; Fanout = 7; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_05m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[13]~0'
+        Info: 7: + IC(0.771 ns) + CELL(0.406 ns) = 3.976 ns; Loc. = LCCOMB_X61_Y45_N20; Fanout = 1; COMB Node = 'DisplayModule:displayChange2|WideOr6~0'
+        Info: 8: + IC(1.836 ns) + CELL(2.672 ns) = 8.484 ns; Loc. = PIN_C30; Fanout = 0; PIN Node = 'change_7seg[0]'
+        Info: Total cell delay = 4.416 ns ( 52.05 % )
+        Info: Total interconnect delay = 4.068 ns ( 47.95 % )
+Info: th for register "ControlModule:controlModule|ITEM.00" (data pin = "rst", clock pin = "clk") is 10.046 ns
+    Info: + Longest clock path from clock "clk" to destination register is 14.614 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.338 ns) + CELL(0.787 ns) = 2.114 ns; Loc. = LCFF_X1_Y25_N21; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_50:d6|Q'
+        Info: 3: + IC(2.788 ns) + CELL(0.787 ns) = 5.689 ns; Loc. = LCFF_X48_Y2_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d5|Q'
+        Info: 4: + IC(0.457 ns) + CELL(0.787 ns) = 6.933 ns; Loc. = LCFF_X49_Y2_N7; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d4|Q'
+        Info: 5: + IC(0.491 ns) + CELL(0.787 ns) = 8.211 ns; Loc. = LCFF_X50_Y2_N17; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d3|Q'
+        Info: 6: + IC(0.472 ns) + CELL(0.787 ns) = 9.470 ns; Loc. = LCFF_X50_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d2|Q'
+        Info: 7: + IC(0.436 ns) + CELL(0.787 ns) = 10.693 ns; Loc. = LCFF_X49_Y1_N31; Fanout = 3; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d1|Q'
+        Info: 8: + IC(0.467 ns) + CELL(0.787 ns) = 11.947 ns; Loc. = LCFF_X48_Y1_N17; Fanout = 2; REG Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q'
+        Info: 9: + IC(0.878 ns) + CELL(0.000 ns) = 12.825 ns; Loc. = CLKCTRL_G14; Fanout = 37; COMB Node = 'clk_1hz:clk_1hz_generator|divide_by_10:d0|Q~clkctrl'
+        Info: 10: + IC(1.252 ns) + CELL(0.537 ns) = 14.614 ns; Loc. = LCFF_X65_Y45_N3; Fanout = 1; REG Node = 'ControlModule:controlModule|ITEM.00'
+        Info: Total cell delay = 7.035 ns ( 48.14 % )
+        Info: Total interconnect delay = 7.579 ns ( 51.86 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 4.834 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T3; Fanout = 4; PIN Node = 'rst'
+        Info: 2: + IC(2.803 ns) + CELL(0.150 ns) = 3.942 ns; Loc. = LCCOMB_X65_Y45_N30; Fanout = 4; COMB Node = 'ControlModule:controlModule|ITEM.00~2'
+        Info: 3: + IC(0.232 ns) + CELL(0.660 ns) = 4.834 ns; Loc. = LCFF_X65_Y45_N3; Fanout = 1; REG Node = 'ControlModule:controlModule|ITEM.00'
+        Info: Total cell delay = 1.799 ns ( 37.22 % )
+        Info: Total interconnect delay = 3.035 ns ( 62.78 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 214 megabytes
+    Info: Processing ended: Mon Sep 04 21:05:58 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

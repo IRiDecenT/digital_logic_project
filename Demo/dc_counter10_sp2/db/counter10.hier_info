@@ -1,0 +1,111 @@
+|counter10
+iclk => iclk~0.IN1
+rst_n => rst_n~0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter10|clk_1hz:clk1
+CLK => CLK~0.IN1
+RST => RST~0.IN7
+clk_1Hz <= divide_by_10:d0.port0
+
+
+|counter10|clk_1hz:clk1|divide_by_50:d6
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => count[3].ACLR
+RST => count[4].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d5
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d4
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d3
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d2
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d1
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
+|counter10|clk_1hz:clk1|divide_by_10:d0
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => Q~reg0.CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+RST => count[2].ACLR
+RST => Q~reg0.ACLR
+
+
