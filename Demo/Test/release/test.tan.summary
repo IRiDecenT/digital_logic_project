@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 20.996 ns
+From           : q[2]~reg0
+To             : seg[0]
+From Clock     : iclk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iclk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : clk_1hz:clk1|divide_by_10:d1|count[2]
+To             : clk_1hz:clk1|divide_by_10:d1|Q
+From Clock     : iclk
+To Clock       : iclk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

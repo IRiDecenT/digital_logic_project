@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 05 13:06:16 2023
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : VendingMachine
+Top-level Entity Name : VendingMachine
+Family : Cyclone II
+Total logic elements : 474
+    Total combinational functions : 473
+    Dedicated logic registers : 69
+Total registers : 69
+Total pins : 81
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

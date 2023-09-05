@@ -1,0 +1,49 @@
+module counter10(iclk,rst_n,q,seg,overflow);
+  input iclk;
+  input rst_n;
+  output reg [3:0] q;
+  output overflow;
+  wire clk_1Hz;
+  
+  output [6:0] seg;
+  reg [6:0] seg;
+      // seg = {g,f,e,d,c,b,a};
+      // 0 is on and 1 is off
+
+
+  clk_1hz clk1(iclk,rst_n,clk_1Hz);
+
+always @(posedge clk_1Hz or negedge rst_n)
+begin
+   if(~rst_n) q <= 4'h0;
+   else
+   begin
+      if(4'h9 == q) q <= 4'h0;
+      else q <= q + 4'h1;
+   end
+end
+
+always @(q)
+         case(q)
+             4'h0: seg = ~7'h3F;
+             4'h1: seg = ~7'h06;     // ---a----
+             4'h2: seg = ~7'h5B;     // |      |
+             4'h3: seg = ~7'h4F;     // f      b
+             4'h4: seg = ~7'h66;     // |      |
+             4'h5: seg = ~7'h6D;     // ---g----
+             4'h6: seg = ~7'h7D;     // |      |
+             4'h7: seg = ~7'h07;     // e      c
+             4'h8: seg = ~7'h7F;     // |      |
+             4'h9: seg = ~7'h67;     // ---d----
+             4'ha: seg = ~7'h77;
+             4'hb: seg = ~7'h7C;
+             4'hc: seg = ~7'h39;
+             4'hd: seg = ~7'h5E;
+             4'he: seg = ~7'h79;
+             4'hf: seg = ~7'h71;
+         endcase
+
+
+
+assign overflow = 4'h9 == q;
+endmodule

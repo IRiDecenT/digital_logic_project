@@ -49,4 +49,26 @@ set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY "C:\\Users\\袁睿\\Desktop\\数电\\digital_logic_project\\Demo\\Test\\release"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VERILOG_FILE clk50M_1hz.v
 set_global_assignment -name VERILOG_FILE test.v
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_AE8 -to seg[0]
+set_location_assignment PIN_AF9 -to seg[1]
+set_location_assignment PIN_AH9 -to seg[2]
+set_location_assignment PIN_AD10 -to seg[3]
+set_location_assignment PIN_AF10 -to seg[4]
+set_location_assignment PIN_AD11 -to seg[5]
+set_location_assignment PIN_AD12 -to seg[6]
+set_location_assignment PIN_AA23 -to rst_n
+set_location_assignment PIN_AJ6 -to q[0]
+set_location_assignment PIN_AK5 -to q[1]
+set_location_assignment PIN_AJ5 -to q[2]
+set_location_assignment PIN_AJ4 -to q[3]
+set_location_assignment PIN_AJ7 -to overflow
+set_location_assignment PIN_AD15 -to iclk
+set_global_assignment -name MISC_FILE "C:/Users/袁睿/Desktop/数电/digital_logic_project/Demo/Test/test.dpf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,13 @@
+
+State Machine - |VendingMachine|ControlModule:controlModule|ITEM
+Name ITEM.11 ITEM.10 ITEM.01 ITEM.00 
+ITEM.00 0 0 0 0 
+ITEM.01 0 0 1 1 
+ITEM.10 0 1 0 1 
+ITEM.11 1 0 0 1 
+
+State Machine - |VendingMachine|ControlModule:controlModule|state
+Name state.UNSELECTED state.WAIT_3SEC state.SELECTED 
+state.UNSELECTED 0 0 0 
+state.SELECTED 1 0 1 
+state.WAIT_3SEC 1 1 0 
