@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for VendingMachine
-Tue Sep 05 13:06:28 2023
+Wed Sep 06 09:53:09 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -823,7 +823,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Sep 05 13:06:28 2023
+    Info: Processing started: Wed Sep 06 09:53:09 2023
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off VendingMachine -c VendingMachine --timing_analysis_only
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "clk" is an undefined clock
@@ -917,28 +917,28 @@ Info: tco from clock "clk" to destination pin "change_7seg[5]" through register 
     Info: + Micro clock to output delay of source is 0.250 ns
     Info: + Longest register to pin delay is 19.857 ns
         Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X54_Y34_N5; Fanout = 9; REG Node = 'ControlModule:controlModule|change[4]'
-        Info: 2: + IC(3.390 ns) + CELL(0.414 ns) = 3.804 ns; Loc. = LCCOMB_X27_Y20_N20; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[1]~1'
-        Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 3.875 ns; Loc. = LCCOMB_X27_Y20_N22; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[2]~3'
-        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 3.946 ns; Loc. = LCCOMB_X27_Y20_N24; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[3]~5'
-        Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 4.356 ns; Loc. = LCCOMB_X27_Y20_N26; Fanout = 10; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[4]~6'
-        Info: 6: + IC(0.478 ns) + CELL(0.271 ns) = 5.105 ns; Loc. = LCCOMB_X26_Y20_N28; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[15]~32'
-        Info: 7: + IC(0.437 ns) + CELL(0.393 ns) = 5.935 ns; Loc. = LCCOMB_X27_Y20_N10; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[1]~1'
-        Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 6.006 ns; Loc. = LCCOMB_X27_Y20_N12; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[2]~3'
-        Info: 9: + IC(0.000 ns) + CELL(0.159 ns) = 6.165 ns; Loc. = LCCOMB_X27_Y20_N14; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[3]~5'
-        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 6.236 ns; Loc. = LCCOMB_X27_Y20_N16; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[4]~7'
-        Info: 11: + IC(0.000 ns) + CELL(0.410 ns) = 6.646 ns; Loc. = LCCOMB_X27_Y20_N18; Fanout = 10; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[5]~8'
-        Info: 12: + IC(0.727 ns) + CELL(0.371 ns) = 7.744 ns; Loc. = LCCOMB_X26_Y20_N22; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[20]~39'
-        Info: 13: + IC(0.687 ns) + CELL(0.414 ns) = 8.845 ns; Loc. = LCCOMB_X25_Y20_N2; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[1]~1'
-        Info: 14: + IC(0.000 ns) + CELL(0.071 ns) = 8.916 ns; Loc. = LCCOMB_X25_Y20_N4; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[2]~3'
-        Info: 15: + IC(0.000 ns) + CELL(0.071 ns) = 8.987 ns; Loc. = LCCOMB_X25_Y20_N6; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[3]~5'
-        Info: 16: + IC(0.000 ns) + CELL(0.071 ns) = 9.058 ns; Loc. = LCCOMB_X25_Y20_N8; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[4]~7'
-        Info: 17: + IC(0.000 ns) + CELL(0.410 ns) = 9.468 ns; Loc. = LCCOMB_X25_Y20_N10; Fanout = 8; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[5]~8'
-        Info: 18: + IC(0.516 ns) + CELL(0.413 ns) = 10.397 ns; Loc. = LCCOMB_X26_Y20_N30; Fanout = 3; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[26]~44'
-        Info: 19: + IC(0.706 ns) + CELL(0.414 ns) = 11.517 ns; Loc. = LCCOMB_X25_Y20_N20; Fanout = 2; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[2]~3'
-        Info: 20: + IC(0.000 ns) + CELL(0.071 ns) = 11.588 ns; Loc. = LCCOMB_X25_Y20_N22; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[3]~5'
-        Info: 21: + IC(0.000 ns) + CELL(0.071 ns) = 11.659 ns; Loc. = LCCOMB_X25_Y20_N24; Fanout = 1; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[4]~7'
-        Info: 22: + IC(0.000 ns) + CELL(0.410 ns) = 12.069 ns; Loc. = LCCOMB_X25_Y20_N26; Fanout = 3; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[5]~8'
-        Info: 23: + IC(0.259 ns) + CELL(0.419 ns) = 12.747 ns; Loc. = LCCOMB_X25_Y20_N30; Fanout = 7; COMB Node = 'hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[31]~46'
+        Info: 2: + IC(3.390 ns) + CELL(0.414 ns) = 3.804 ns; Loc. = LCCOMB_X27_Y20_N20; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[1]~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 3.875 ns; Loc. = LCCOMB_X27_Y20_N22; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[2]~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 3.946 ns; Loc. = LCCOMB_X27_Y20_N24; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[3]~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 4.356 ns; Loc. = LCCOMB_X27_Y20_N26; Fanout = 10; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_3_result_int[4]~6'
+        Info: 6: + IC(0.478 ns) + CELL(0.271 ns) = 5.105 ns; Loc. = LCCOMB_X26_Y20_N28; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[15]~32'
+        Info: 7: + IC(0.437 ns) + CELL(0.393 ns) = 5.935 ns; Loc. = LCCOMB_X27_Y20_N10; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[1]~1'
+        Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 6.006 ns; Loc. = LCCOMB_X27_Y20_N12; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[2]~3'
+        Info: 9: + IC(0.000 ns) + CELL(0.159 ns) = 6.165 ns; Loc. = LCCOMB_X27_Y20_N14; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[3]~5'
+        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 6.236 ns; Loc. = LCCOMB_X27_Y20_N16; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[4]~7'
+        Info: 11: + IC(0.000 ns) + CELL(0.410 ns) = 6.646 ns; Loc. = LCCOMB_X27_Y20_N18; Fanout = 10; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_4_result_int[5]~8'
+        Info: 12: + IC(0.727 ns) + CELL(0.371 ns) = 7.744 ns; Loc. = LCCOMB_X26_Y20_N22; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[20]~39'
+        Info: 13: + IC(0.687 ns) + CELL(0.414 ns) = 8.845 ns; Loc. = LCCOMB_X25_Y20_N2; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[1]~1'
+        Info: 14: + IC(0.000 ns) + CELL(0.071 ns) = 8.916 ns; Loc. = LCCOMB_X25_Y20_N4; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[2]~3'
+        Info: 15: + IC(0.000 ns) + CELL(0.071 ns) = 8.987 ns; Loc. = LCCOMB_X25_Y20_N6; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[3]~5'
+        Info: 16: + IC(0.000 ns) + CELL(0.071 ns) = 9.058 ns; Loc. = LCCOMB_X25_Y20_N8; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[4]~7'
+        Info: 17: + IC(0.000 ns) + CELL(0.410 ns) = 9.468 ns; Loc. = LCCOMB_X25_Y20_N10; Fanout = 8; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_5_result_int[5]~8'
+        Info: 18: + IC(0.516 ns) + CELL(0.413 ns) = 10.397 ns; Loc. = LCCOMB_X26_Y20_N30; Fanout = 3; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[26]~44'
+        Info: 19: + IC(0.706 ns) + CELL(0.414 ns) = 11.517 ns; Loc. = LCCOMB_X25_Y20_N20; Fanout = 2; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[2]~3'
+        Info: 20: + IC(0.000 ns) + CELL(0.071 ns) = 11.588 ns; Loc. = LCCOMB_X25_Y20_N22; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[3]~5'
+        Info: 21: + IC(0.000 ns) + CELL(0.071 ns) = 11.659 ns; Loc. = LCCOMB_X25_Y20_N24; Fanout = 1; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[4]~7'
+        Info: 22: + IC(0.000 ns) + CELL(0.410 ns) = 12.069 ns; Loc. = LCCOMB_X25_Y20_N26; Fanout = 3; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|add_sub_6_result_int[5]~8'
+        Info: 23: + IC(0.259 ns) + CELL(0.419 ns) = 12.747 ns; Loc. = LCCOMB_X25_Y20_N30; Fanout = 7; COMB Node = 'BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider|StageOut[31]~46'
         Info: 24: + IC(3.439 ns) + CELL(0.275 ns) = 16.461 ns; Loc. = LCCOMB_X1_Y32_N2; Fanout = 1; COMB Node = 'DisplayModule:displayChange2|WideOr1~0'
         Info: 25: + IC(0.744 ns) + CELL(2.652 ns) = 19.857 ns; Loc. = PIN_M1; Fanout = 0; PIN Node = 'change_7seg[5]'
         Info: Total cell delay = 8.474 ns ( 42.68 % )
@@ -965,8 +965,8 @@ Info: th for register "ControlModule:controlModule|price[1]" (data pin = "select
         Info: Total cell delay = 1.201 ns ( 16.44 % )
         Info: Total interconnect delay = 6.104 ns ( 83.56 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 215 megabytes
-    Info: Processing ended: Tue Sep 05 13:06:28 2023
+    Info: Peak virtual memory: 216 megabytes
+    Info: Processing ended: Wed Sep 06 09:53:09 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

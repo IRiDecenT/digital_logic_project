@@ -1,4 +1,4 @@
-module hexBCDconvertModule(input[6:0] hexNum, output reg[7:0] hexBCD);
+module BCDconvertModule(input[6:0] Num, output reg[7:0] BCD);
 	/*
 	reg[3:0] tens;
 	reg[3:0] ones;
@@ -16,9 +16,9 @@ module hexBCDconvertModule(input[6:0] hexNum, output reg[7:0] hexBCD);
 		hexBCD = {tens, ones};
 	end
 	*/
-	always@(hexNum)
+	always@(Num)
 	begin
-		hexBCD[7:4] = hexNum % 10;
-		hexBCD[3:0] = hexNum / 10;
+		BCD[7:4] = Num / 10;
+		BCD[3:0] = hexNum % 10;
 	end
 endmodule

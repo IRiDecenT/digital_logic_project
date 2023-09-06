@@ -62,14 +62,14 @@ module VendingMachine(
 	.change(change),
 	.total(total));
 	
-	hexBCDconvertModule convert1(.hexNum(price), 
-								.hexBCD(price_BCD));
-	hexBCDconvertModule convert2(.hexNum(coinBalance),
-								.hexBCD(coinBalance_BCD));
-	hexBCDconvertModule convert3(.hexNum(change),
-								.hexBCD(change_BCD));
-	hexBCDconvertModule convert4(.hexNum(total),
-								.hexBCD(total_BCD));
+	BCDconvertModule convert1(.Num(price), 
+								.BCD(price_BCD));
+	BCDconvertModule convert2(.Num(coinBalance),
+								.BCD(coinBalance_BCD));
+	BCDconvertModule convert3(.Num(change),
+								.BCD(change_BCD));
+	BCDconvertModule convert4(.Num(total),
+								.BCD(total_BCD));
 								
 	// 1 -> shi wei  2 -> ge wei
 	DisplayModule displayPrice1(.displayNum(price_BCD[7:4]),

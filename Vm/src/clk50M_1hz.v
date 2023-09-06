@@ -2,9 +2,7 @@ module clk_1hz(CLK, RST, clk_1Hz);
     input CLK, RST;
     output clk_1Hz;
 	 wire clk_1MHz, clk_100KHz, clk_10KHz, clk_1KHz, clk_100Hz, clk_10Hz;
-      
     //assign clock = {clk_1MHz, clk_100KHz, clk_10KHz, clk_1KHz, clk_100Hz, clk_10Hz, clk_1Hz};
-     
      divide_by_50 d6 (clk_1MHz, CLK, RST);
      divide_by_10 d5 (clk_100KHz, clk_1MHz, RST);
      divide_by_10 d4 (clk_10KHz, clk_100KHz, RST);
@@ -14,8 +12,6 @@ module clk_1hz(CLK, RST, clk_1Hz);
      divide_by_10 d0 (clk_1Hz, clk_10Hz, RST);
      
  endmodule
-
-
 
 module divide_by_10 (Q, CLK, RST,);
       input CLK, RST;
@@ -42,7 +38,6 @@ module divide_by_10 (Q, CLK, RST,);
          end
  
  endmodule
-
 
  module divide_by_50 (Q, CLK, RST);
       input CLK, RST;

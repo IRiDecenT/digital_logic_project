@@ -414,104 +414,104 @@ total[5] <= total[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 total[6] <= total[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VendingMachine|hexBCDconvertModule:convert1
-hexNum[0] => Div0.IN10
-hexNum[0] => Mod0.IN10
-hexNum[1] => Div0.IN9
-hexNum[1] => Mod0.IN9
-hexNum[2] => Div0.IN8
-hexNum[2] => Mod0.IN8
-hexNum[3] => Div0.IN7
-hexNum[3] => Mod0.IN7
-hexNum[4] => Div0.IN6
-hexNum[4] => Mod0.IN6
-hexNum[5] => Div0.IN5
-hexNum[5] => Mod0.IN5
-hexNum[6] => Div0.IN4
-hexNum[6] => Mod0.IN4
-hexBCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+|VendingMachine|BCDconvertModule:convert1
+Num[0] => Div0.IN10
+Num[0] => Mod0.IN10
+Num[1] => Div0.IN9
+Num[1] => Mod0.IN9
+Num[2] => Div0.IN8
+Num[2] => Mod0.IN8
+Num[3] => Div0.IN7
+Num[3] => Mod0.IN7
+Num[4] => Div0.IN6
+Num[4] => Mod0.IN6
+Num[5] => Div0.IN5
+Num[5] => Mod0.IN5
+Num[6] => Div0.IN4
+Num[6] => Mod0.IN4
+BCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VendingMachine|hexBCDconvertModule:convert2
-hexNum[0] => Div0.IN10
-hexNum[0] => Mod0.IN10
-hexNum[1] => Div0.IN9
-hexNum[1] => Mod0.IN9
-hexNum[2] => Div0.IN8
-hexNum[2] => Mod0.IN8
-hexNum[3] => Div0.IN7
-hexNum[3] => Mod0.IN7
-hexNum[4] => Div0.IN6
-hexNum[4] => Mod0.IN6
-hexNum[5] => Div0.IN5
-hexNum[5] => Mod0.IN5
-hexNum[6] => Div0.IN4
-hexNum[6] => Mod0.IN4
-hexBCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+|VendingMachine|BCDconvertModule:convert2
+Num[0] => Div0.IN10
+Num[0] => Mod0.IN10
+Num[1] => Div0.IN9
+Num[1] => Mod0.IN9
+Num[2] => Div0.IN8
+Num[2] => Mod0.IN8
+Num[3] => Div0.IN7
+Num[3] => Mod0.IN7
+Num[4] => Div0.IN6
+Num[4] => Mod0.IN6
+Num[5] => Div0.IN5
+Num[5] => Mod0.IN5
+Num[6] => Div0.IN4
+Num[6] => Mod0.IN4
+BCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VendingMachine|hexBCDconvertModule:convert3
-hexNum[0] => Div0.IN10
-hexNum[0] => Mod0.IN10
-hexNum[1] => Div0.IN9
-hexNum[1] => Mod0.IN9
-hexNum[2] => Div0.IN8
-hexNum[2] => Mod0.IN8
-hexNum[3] => Div0.IN7
-hexNum[3] => Mod0.IN7
-hexNum[4] => Div0.IN6
-hexNum[4] => Mod0.IN6
-hexNum[5] => Div0.IN5
-hexNum[5] => Mod0.IN5
-hexNum[6] => Div0.IN4
-hexNum[6] => Mod0.IN4
-hexBCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+|VendingMachine|BCDconvertModule:convert3
+Num[0] => Div0.IN10
+Num[0] => Mod0.IN10
+Num[1] => Div0.IN9
+Num[1] => Mod0.IN9
+Num[2] => Div0.IN8
+Num[2] => Mod0.IN8
+Num[3] => Div0.IN7
+Num[3] => Mod0.IN7
+Num[4] => Div0.IN6
+Num[4] => Mod0.IN6
+Num[5] => Div0.IN5
+Num[5] => Mod0.IN5
+Num[6] => Div0.IN4
+Num[6] => Mod0.IN4
+BCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VendingMachine|hexBCDconvertModule:convert4
-hexNum[0] => Div0.IN10
-hexNum[0] => Mod0.IN10
-hexNum[1] => Div0.IN9
-hexNum[1] => Mod0.IN9
-hexNum[2] => Div0.IN8
-hexNum[2] => Mod0.IN8
-hexNum[3] => Div0.IN7
-hexNum[3] => Mod0.IN7
-hexNum[4] => Div0.IN6
-hexNum[4] => Mod0.IN6
-hexNum[5] => Div0.IN5
-hexNum[5] => Mod0.IN5
-hexNum[6] => Div0.IN4
-hexNum[6] => Mod0.IN4
-hexBCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
-hexBCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+|VendingMachine|BCDconvertModule:convert4
+Num[0] => Div0.IN10
+Num[0] => Mod0.IN10
+Num[1] => Div0.IN9
+Num[1] => Mod0.IN9
+Num[2] => Div0.IN8
+Num[2] => Mod0.IN8
+Num[3] => Div0.IN7
+Num[3] => Mod0.IN7
+Num[4] => Div0.IN6
+Num[4] => Mod0.IN6
+Num[5] => Div0.IN5
+Num[5] => Mod0.IN5
+Num[6] => Div0.IN4
+Num[6] => Mod0.IN4
+BCD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+BCD[7] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|DisplayModule:displayPrice1

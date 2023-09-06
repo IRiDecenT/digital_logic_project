@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingMachine
-Tue Sep 05 13:06:16 2023
+Wed Sep 06 09:52:54 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -19,13 +19,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: ControlModule:controlModule
- 14. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert1|lpm_divide:Mod0
- 15. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert3|lpm_divide:Mod0
- 16. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert3|lpm_divide:Div0
- 17. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert2|lpm_divide:Mod0
- 18. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert2|lpm_divide:Div0
- 19. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert4|lpm_divide:Mod0
- 20. Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert4|lpm_divide:Div0
+ 14. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert1|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert3|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert3|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert2|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert2|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert4|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert4|lpm_divide:Div0
  21. Analysis & Synthesis Messages
 
 
@@ -52,7 +52,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 05 13:06:16 2023        ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 06 09:52:54 2023        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; VendingMachine                               ;
 ; Top-level Entity Name              ; VendingMachine                               ;
@@ -164,10 +164,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+
+; src/BCDconvertModule.v           ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/BCDconvertModule.v     ;
 ; src/clk50M_1hz.v                 ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/clk50M_1hz.v           ;
 ; src/ControlModule.v              ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/ControlModule.v        ;
 ; src/DisplayModule.v              ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/DisplayModule.v        ;
-; src/hexBCDconvertModule.v        ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/hexBCDconvertModule.v  ;
 ; src/VendingMachine.v             ; yes             ; User Verilog HDL File        ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/src/VendingMachine.v       ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_divide.tdf                 ;
 ; db/lpm_divide_35m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/袁睿/Desktop/数电/digital_logic_project/Vm/db/lpm_divide_35m.tdf      ;
@@ -208,62 +208,62 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                          ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |VendingMachine                           ; 473 (0)           ; 69 (0)       ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |VendingMachine                                                                                                                              ; work         ;
-;    |ControlModule:controlModule|          ; 117 (117)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|ControlModule:controlModule                                                                                                  ;              ;
-;    |DisplayModule:displayBalance1|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayBalance1                                                                                                ;              ;
-;    |DisplayModule:displayBalance2|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayBalance2                                                                                                ;              ;
-;    |DisplayModule:displayChange1|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayChange1                                                                                                 ;              ;
-;    |DisplayModule:displayChange2|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayChange2                                                                                                 ;              ;
-;    |DisplayModule:displayPrice1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayPrice1                                                                                                  ;              ;
-;    |DisplayModule:displayPrice2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayPrice2                                                                                                  ;              ;
-;    |DisplayModule:displayTotal1|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayTotal1                                                                                                  ;              ;
-;    |DisplayModule:displayTotal2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayTotal2                                                                                                  ;              ;
-;    |clk_1hz:clk_1hz_generator|            ; 31 (0)            ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator                                                                                                    ;              ;
-;       |divide_by_10:d0|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d0                                                                                    ;              ;
-;       |divide_by_10:d1|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d1                                                                                    ;              ;
-;       |divide_by_10:d2|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d2                                                                                    ;              ;
-;       |divide_by_10:d3|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d3                                                                                    ;              ;
-;       |divide_by_10:d4|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d4                                                                                    ;              ;
-;       |divide_by_10:d5|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d5                                                                                    ;              ;
-;       |divide_by_50:d6|                   ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_50:d6                                                                                    ;              ;
-;    |hexBCDconvertModule:convert1|         ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert1                                                                                                 ;              ;
-;       |lpm_divide:Mod0|                   ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert1|lpm_divide:Mod0                                                                                 ;              ;
-;          |lpm_divide_35m:auto_generated|  ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;    |hexBCDconvertModule:convert2|         ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2                                                                                                 ;              ;
-;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Div0                                                                                 ;              ;
-;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Mod0                                                                                 ;              ;
-;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;    |hexBCDconvertModule:convert3|         ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3                                                                                                 ;              ;
-;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Div0                                                                                 ;              ;
-;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Mod0                                                                                 ;              ;
-;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;    |hexBCDconvertModule:convert4|         ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4                                                                                                 ;              ;
-;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Div0                                                                                 ;              ;
-;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Mod0                                                                                 ;              ;
-;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
-;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|hexBCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                       ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |VendingMachine                           ; 473 (0)           ; 69 (0)       ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |VendingMachine                                                                                                                           ; work         ;
+;    |BCDconvertModule:convert1|            ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert1                                                                                                 ;              ;
+;       |lpm_divide:Mod0|                   ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert1|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_35m:auto_generated|  ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert1|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;    |BCDconvertModule:convert2|            ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2                                                                                                 ;              ;
+;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Div0                                                                                 ;              ;
+;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert2|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;    |BCDconvertModule:convert3|            ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3                                                                                                 ;              ;
+;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Div0                                                                                 ;              ;
+;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert3|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;    |BCDconvertModule:convert4|            ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4                                                                                                 ;              ;
+;       |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Div0                                                                                 ;              ;
+;          |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;       |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ;              ;
+;                |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|BCDconvertModule:convert4|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ;              ;
+;    |ControlModule:controlModule|          ; 117 (117)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|ControlModule:controlModule                                                                                               ;              ;
+;    |DisplayModule:displayBalance1|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayBalance1                                                                                             ;              ;
+;    |DisplayModule:displayBalance2|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayBalance2                                                                                             ;              ;
+;    |DisplayModule:displayChange1|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayChange1                                                                                              ;              ;
+;    |DisplayModule:displayChange2|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayChange2                                                                                              ;              ;
+;    |DisplayModule:displayPrice1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayPrice1                                                                                               ;              ;
+;    |DisplayModule:displayPrice2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayPrice2                                                                                               ;              ;
+;    |DisplayModule:displayTotal1|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayTotal1                                                                                               ;              ;
+;    |DisplayModule:displayTotal2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|DisplayModule:displayTotal2                                                                                               ;              ;
+;    |clk_1hz:clk_1hz_generator|            ; 31 (0)            ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator                                                                                                 ;              ;
+;       |divide_by_10:d0|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d0                                                                                 ;              ;
+;       |divide_by_10:d1|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d1                                                                                 ;              ;
+;       |divide_by_10:d2|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d2                                                                                 ;              ;
+;       |divide_by_10:d3|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d3                                                                                 ;              ;
+;       |divide_by_10:d4|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d4                                                                                 ;              ;
+;       |divide_by_10:d5|                   ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_10:d5                                                                                 ;              ;
+;       |divide_by_50:d6|                   ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VendingMachine|clk_1hz:clk_1hz_generator|divide_by_50:d6                                                                                 ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -346,164 +346,164 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert1|lpm_divide:Mod0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert1|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert3|lpm_divide:Mod0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert3|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert3|lpm_divide:Div0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert3|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert2|lpm_divide:Mod0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert2|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert2|lpm_divide:Div0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert2|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert4|lpm_divide:Mod0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert4|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hexBCDconvertModule:convert4|lpm_divide:Div0 ;
-+------------------------+----------------+-----------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                ;
-+------------------------+----------------+-----------------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                             ;
-; LPM_WIDTHD             ; 4              ; Untyped                                             ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
-; LPM_PIPELINE           ; 0              ; Untyped                                             ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
-; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                             ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
-+------------------------+----------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCDconvertModule:convert4|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -513,9 +513,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Sep 05 13:06:14 2023
+    Info: Processing started: Wed Sep 06 09:52:51 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingMachine -c VendingMachine
-Warning (10238): Verilog Module Declaration warning at clk50M_1hz.v(20): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "divide_by_10"
+Info: Found 1 design units, including 1 entities, in source file src/bcdconvertmodule.v
+    Info: Found entity 1: BCDconvertModule
+Warning (10238): Verilog Module Declaration warning at clk50M_1hz.v(16): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "divide_by_10"
 Info: Found 3 design units, including 3 entities, in source file src/clk50m_1hz.v
     Info: Found entity 1: clk_1hz
     Info: Found entity 2: divide_by_10
@@ -524,8 +526,6 @@ Info: Found 1 design units, including 1 entities, in source file src/controlmodu
     Info: Found entity 1: ControlModule
 Info: Found 1 design units, including 1 entities, in source file src/displaymodule.v
     Info: Found entity 1: DisplayModule
-Info: Found 1 design units, including 1 entities, in source file src/hexbcdconvertmodule.v
-    Info: Found entity 1: hexBCDconvertModule
 Info: Found 1 design units, including 1 entities, in source file src/vendingmachine.v
     Info: Found entity 1: VendingMachine
 Info: Elaborating entity "VendingMachine" for the top level hierarchy
@@ -539,20 +539,20 @@ Warning (10230): Verilog HDL assignment warning at ControlModule.v(105): truncat
 Warning (10230): Verilog HDL assignment warning at ControlModule.v(111): truncated value with size 32 to match size of target (7)
 Warning (10230): Verilog HDL assignment warning at ControlModule.v(117): truncated value with size 32 to match size of target (7)
 Warning (10230): Verilog HDL assignment warning at ControlModule.v(165): truncated value with size 32 to match size of target (2)
-Info: Elaborating entity "hexBCDconvertModule" for hierarchy "hexBCDconvertModule:convert1"
-Warning (10230): Verilog HDL assignment warning at hexBCDconvertModule.v(21): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at hexBCDconvertModule.v(22): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "BCDconvertModule" for hierarchy "BCDconvertModule:convert1"
+Warning (10230): Verilog HDL assignment warning at BCDconvertModule.v(21): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at BCDconvertModule.v(22): truncated value with size 32 to match size of target (4)
 Info: Elaborating entity "DisplayModule" for hierarchy "DisplayModule:displayPrice1"
 Info: Inferred 7 megafunctions from design logic
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert1|Mod0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert3|Mod0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert3|Div0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert2|Mod0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert2|Div0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert4|Mod0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hexBCDconvertModule:convert4|Div0"
-Info: Elaborated megafunction instantiation "hexBCDconvertModule:convert1|lpm_divide:Mod0"
-Info: Instantiated megafunction "hexBCDconvertModule:convert1|lpm_divide:Mod0" with the following parameter:
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert1|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert3|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert3|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert2|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert2|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert4|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCDconvertModule:convert4|Div0"
+Info: Elaborated megafunction instantiation "BCDconvertModule:convert1|lpm_divide:Mod0"
+Info: Instantiated megafunction "BCDconvertModule:convert1|lpm_divide:Mod0" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "7"
     Info: Parameter "LPM_WIDTHD" = "4"
     Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -567,14 +567,14 @@ Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.
     Info: Found entity 1: add_sub_lkc
 Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
     Info: Found entity 1: add_sub_mkc
-Info: Elaborated megafunction instantiation "hexBCDconvertModule:convert3|lpm_divide:Mod0"
-Info: Instantiated megafunction "hexBCDconvertModule:convert3|lpm_divide:Mod0" with the following parameter:
+Info: Elaborated megafunction instantiation "BCDconvertModule:convert3|lpm_divide:Mod0"
+Info: Instantiated megafunction "BCDconvertModule:convert3|lpm_divide:Mod0" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "7"
     Info: Parameter "LPM_WIDTHD" = "4"
     Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info: Elaborated megafunction instantiation "hexBCDconvertModule:convert3|lpm_divide:Div0"
-Info: Instantiated megafunction "hexBCDconvertModule:convert3|lpm_divide:Div0" with the following parameter:
+Info: Elaborated megafunction instantiation "BCDconvertModule:convert3|lpm_divide:Div0"
+Info: Instantiated megafunction "BCDconvertModule:convert3|lpm_divide:Div0" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "7"
     Info: Parameter "LPM_WIDTHD" = "4"
     Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -601,8 +601,8 @@ Info: Implemented 557 device resources after synthesis - the final resource coun
     Info: Implemented 476 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 20 warnings
     Info: Peak virtual memory: 250 megabytes
-    Info: Processing ended: Tue Sep 05 13:06:16 2023
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Wed Sep 06 09:52:54 2023
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -20,119 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-clk_1hz
-# storage
-db|VendingMachine.(1).cnf
-db|VendingMachine.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-src|clk50m_1hz.v
-4c25507f9278dda33fc927f05eebd989
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-clk_1hz:clk_1hz_generator
-}
-# macro_sequence
-
-# end
-# entity
-divide_by_50
-# storage
-db|VendingMachine.(2).cnf
-db|VendingMachine.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-src|clk50m_1hz.v
-4c25507f9278dda33fc927f05eebd989
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-clk_1hz:clk_1hz_generator|divide_by_50:d6
-}
-# macro_sequence
-
-# end
-# entity
-divide_by_10
-# storage
-db|VendingMachine.(3).cnf
-db|VendingMachine.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-src|clk50m_1hz.v
-4c25507f9278dda33fc927f05eebd989
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-clk_1hz:clk_1hz_generator|divide_by_10:d5
-clk_1hz:clk_1hz_generator|divide_by_10:d4
-clk_1hz:clk_1hz_generator|divide_by_10:d3
-clk_1hz:clk_1hz_generator|divide_by_10:d2
-clk_1hz:clk_1hz_generator|divide_by_10:d1
-clk_1hz:clk_1hz_generator|divide_by_10:d0
-}
-# macro_sequence
-
-# end
-# entity
 lpm_divide
 # storage
 db|VendingMachine.(7).cnf
@@ -1354,45 +1241,6 @@ denom1
 
 # end
 # entity
-hexBCDconvertModule
-# storage
-db|VendingMachine.(5).cnf
-db|VendingMachine.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-src|hexbcdconvertmodule.v
-6bf621281abdd9b89b5f5a3dd03defd4
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-hexBCDconvertModule:convert1
-hexBCDconvertModule:convert2
-hexBCDconvertModule:convert3
-hexBCDconvertModule:convert4
-}
-# macro_sequence
-
-# end
-# entity
 ControlModule
 # storage
 db|VendingMachine.(4).cnf
@@ -1443,42 +1291,6 @@ ControlModule:controlModule
 
 # end
 # entity
-VendingMachine
-# storage
-db|VendingMachine.(0).cnf
-db|VendingMachine.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-src|vendingmachine.v
-c722e3eeefcb3aebdc7c9c5e7f6ff
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 DisplayModule
 # storage
 db|VendingMachine.(6).cnf
@@ -1517,6 +1329,194 @@ DisplayModule:displayChange1
 DisplayModule:displayChange2
 DisplayModule:displayTotal1
 DisplayModule:displayTotal2
+}
+# macro_sequence
+
+# end
+# entity
+VendingMachine
+# storage
+db|VendingMachine.(0).cnf
+db|VendingMachine.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+src|vendingmachine.v
+8ae9826c4d15c05c828a49c911d8fba
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+BCDconvertModule
+# storage
+db|VendingMachine.(5).cnf
+db|VendingMachine.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+src|bcdconvertmodule.v
+27ccd91bc9a0ed461ed13237efecd7f8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+BCDconvertModule:convert1
+BCDconvertModule:convert2
+BCDconvertModule:convert3
+BCDconvertModule:convert4
+}
+# macro_sequence
+
+# end
+# entity
+clk_1hz
+# storage
+db|VendingMachine.(1).cnf
+db|VendingMachine.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+src|clk50m_1hz.v
+cbd39a9c38431362c658dba1656f9997
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+clk_1hz:clk_1hz_generator
+}
+# macro_sequence
+
+# end
+# entity
+divide_by_50
+# storage
+db|VendingMachine.(2).cnf
+db|VendingMachine.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+src|clk50m_1hz.v
+cbd39a9c38431362c658dba1656f9997
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+clk_1hz:clk_1hz_generator|divide_by_50:d6
+}
+# macro_sequence
+
+# end
+# entity
+divide_by_10
+# storage
+db|VendingMachine.(3).cnf
+db|VendingMachine.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+src|clk50m_1hz.v
+cbd39a9c38431362c658dba1656f9997
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+clk_1hz:clk_1hz_generator|divide_by_10:d5
+clk_1hz:clk_1hz_generator|divide_by_10:d4
+clk_1hz:clk_1hz_generator|divide_by_10:d3
+clk_1hz:clk_1hz_generator|divide_by_10:d2
+clk_1hz:clk_1hz_generator|divide_by_10:d1
+clk_1hz:clk_1hz_generator|divide_by_10:d0
 }
 # macro_sequence
 
