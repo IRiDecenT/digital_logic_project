@@ -38,8 +38,8 @@ module VendingMachine(
 	clk_1hz clk_1hz_generator(.CLK(clk), .RST(rst), .clk_1Hz(clk_1hz));
 		
 	ControlModule controlModule(
-	.clk(clk_1hz),
-	//.clk(clk),
+	//.clk(clk_1hz),
+	.clk(clk),
 	.rst(rst),
 	//.state(state),
 	//.price(price),
@@ -69,7 +69,7 @@ module VendingMachine(
 	BCDconvertModule convert3(.Num(change),
 								.BCD(change_BCD));
 	BCDconvertModule convert4(.Num(total),
-								.hexBCD(total_BCD));
+								.BCD(total_BCD));
 								
 	// 1 -> shi wei  2 -> ge wei
 	DisplayModule displayPrice1(.displayNum(price_BCD[7:4]),
